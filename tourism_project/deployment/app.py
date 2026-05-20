@@ -200,11 +200,11 @@ st.caption("Predict whether a customer is likely to buy a tourism package.")
 
 metric_col1, metric_col2, metric_col3 = st.columns(3)
 metric_col1.metric("Model", "XGBoost")
-metric_col2.metric("Input Modes", "Single + CSV")
+metric_col2.metric("Input Modes", "Single")
 metric_col3.metric("Target", "ProdTaken")
 
 tab_single, tab_batch, tab_schema = st.tabs(
-    ["Single Prediction", "Batch CSV Prediction", "CSV Format"]
+    ["Single Prediction"]
 )
 
 with tab_single:
