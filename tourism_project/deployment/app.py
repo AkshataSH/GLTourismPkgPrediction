@@ -203,9 +203,8 @@ metric_col1.metric("Model", "XGBoost")
 metric_col2.metric("Input Modes", "Single")
 metric_col3.metric("Target", "ProdTaken")
 
-tab_single, tab_batch, tab_schema = st.tabs(
-    ["Single Prediction"]
-)
+tabs = st.tabs(["Single Prediction"])
+tab_single = tabs[0]
 
 with tab_single:
     st.subheader("Customer Details")
