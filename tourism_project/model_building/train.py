@@ -27,7 +27,7 @@ from huggingface_hub.utils import RepositoryNotFoundError
 import mlflow
 # Set up MLflow tracking
 mlflow.set_tracking_uri("https://undefined-illusive-dole.ngrok-free.dev")
-mlflow.set_experiment("ash-tourism-package-prediction")
+mlflow.set_experiment("tourism-package-prediction")
 repo_id = "akshatash/GLTourismPkgPrediction"
 api = HfApi()
 
@@ -80,7 +80,7 @@ param_grid = {
 # Create pipeline
 model_pipeline = make_pipeline(preprocessor, xgb_model)
 
-mlflow.set_experiment("ash-tourism-package-prediction")
+mlflow.set_experiment("tourism-package-prediction")
 with mlflow.start_run():
     print("Performing Grid Search with Cross-Validation...")
     grid_search = GridSearchCV(
