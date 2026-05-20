@@ -74,7 +74,8 @@ param_grid = {
     'xgbclassifier__learning_rate': [0.03, 0.05, 0.1],
     'xgbclassifier__subsample': [0.5],
     'xgbclassifier__colsample_bytree': [0.5], 
-    'xgbclassifier__reg_lambda': [0.5]  
+    'xgbclassifier__reg_lambda': [0.5],
+    'xgbclassifier__scale_pos_weight': [1, scale_pos_weight, scale_pos_weight + 1]
 }
 
 # Create pipeline
@@ -87,6 +88,7 @@ with mlflow.start_run():
         model_pipeline, 
         param_grid, 
         cv=5, 
+        scoring='f1',
         n_jobs=-1, 
         verbose=1
     )
@@ -103,7 +105,7 @@ with mlflow.start_run():
 
         with mlflow.start_run(nested=True):
             mlflow.log_params(param_set)
-            mlflow.log_metric("mean_roc_auc", mean_score)
+            mlflow.log_metric("mean_cv_score", mean_score)
 
     # Best model
     print(f"\nBest parameters: {grid_search.best_params_}")
