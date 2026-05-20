@@ -42,7 +42,3 @@ This repository contains an Machine Learning and MLOps project focused on a tour
 - Deploy the app using the `tourism_project/deployment/Dockerfile` and `tourism_project/deployment/app.py`.
 - Use `tourism_project/hosting/hosting.py` for model hosting workflows.
 
-## Notes
-
-- This repository is intended for learning and experimenting with MLOps pipeline components.
-- Update the README as project scope and scripts evolve.
