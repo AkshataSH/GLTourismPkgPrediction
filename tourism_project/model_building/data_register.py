@@ -2,7 +2,7 @@ from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 from huggingface_hub import HfApi, create_repo
 import os
 
-repo_id = "akshatash/GLGLTourismPkgPrediction"
+repo_id = "akshatash/GLTourismPkgPrediction"
 repo_type = "dataset"
 
 # Initialize API client
